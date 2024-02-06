@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!--verbose attributes represents login level... default value -1 only debug logs will show -->
+<!-- 1-10 for verbose level  10 show all logs for all levels.. level 1 show entry level and higher error -->
+<suite name="Auth Suite" verbose="1" parallel="tests" thread-count="10"> <!-- tests - run the bottom test in parallel  methods - run methods in java class in parallel-->
+<!--top says that the test below will run in parallel will use max 10 thread.. run each methods in parallel with max 5 threads -->
+    <test name="Login Test" parallel="methods" thread-count="5">
+        <classes>
+            <class name="com.solvd.laba.LogInTestPractice"/> <!-- executes all test in this class if methods not specified-->
+<!--                <methods>-->
+<!--                    <include name="verifyLoginWithValidCredentialsTest"/> &lt;!&ndash; name of method in LogInTest class&ndash;&gt;-->
+<!--                    <exclude name="verifyLoginWithValidCredentialsTest"></exclude> &lt;!&ndash; run all test cases except for the 1 specified&ndash;&gt;-->
+
+<!--                </methods>-->
+<!--            </class>-->
+        </classes>
+    </test>
+
+    <test name="Logout Test">
+
+    </test>
+
+    <test name="Forgot password Test">
+
+    </test>
+
+
+</suite>
